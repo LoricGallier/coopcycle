@@ -17,7 +17,18 @@
     <property name="datetimeType" value="datetime" dbms="postgresql"/>
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230409145504_added_entity_Client.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230409145505_added_entity_Livreur.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230409145506_added_entity_Plat.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230409145507_added_entity_Restaurant.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230409145508_added_entity_Cooperative.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230409145509_added_entity_Order.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20230409145505_added_entity_constraints_Livreur.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230409145506_added_entity_constraints_Plat.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230409145507_added_entity_constraints_Restaurant.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230409145508_added_entity_constraints_Cooperative.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230409145509_added_entity_constraints_Order.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
     <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->
 </databaseChangeLog>

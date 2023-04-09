@@ -1,0 +1,66 @@
+
+
+entity Client {
+    clientName String required
+    clientEmail String required pattern(/^[^@\s]+@[^@\s]+\.[^@\s]+$/) unique
+    clientPhone String required pattern(/\d+$/)
+    clientAddress String required minlength(3) maxlength(100)
+}
+
+entity Livreur {
+	livreurName String required
+    livreurEmail String required pattern(/^[^@\s]+@[^@\s]+\.[^@\s]+$/) unique
+    livreurPhone String required pattern(/\d+$/)
+    livreurAddress String required minlength(3) maxlength(100)
+}
+
+
+entity Plat {
+    name String required minlength(4)
+    price Float required min(0)
+    quantity Integer required min(0)
+}
+
+entity Restaurant {
+    name String required pattern(/[a-z]/),
+    restaurantAdresse String required
+}
+
+entity Cooperative {
+    name String required
+}
+
+entity Order {
+      orderDate Instant required
+      orderStatus OrderStatus required
+      price Float required min(0)
+}
+
+enum OrderStatus {
+  PREPARATION,
+  PRETE,
+  EN_LIVRAISON,
+  LIVREE
+}
+
+
+relationship OneToMany {
+    Restaurant to Plat,
+    Cooperative to Restaurant,
+    Cooperative to Livreur,
+    Client to Cooperative,
+    Client to Order,
+    Restaurant to Order,
+    Client to Order,
+    Livreur to Order
+    
+}
+
+
+
+relationship ManyToMany {
+    Order to Plat
+}
+
+dto * with mapstruct
+

@@ -1,0 +1,44 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="client">
+      <h2 data-cy="clientDetailsHeading"><span jhiTranslate="coopcycleApp.client.detail.title">Client</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ client.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopcycleApp.client.clientName">Client Name</span></dt>
+        <dd>
+          <span>{{ client.clientName }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopcycleApp.client.clientEmail">Client Email</span></dt>
+        <dd>
+          <span>{{ client.clientEmail }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopcycleApp.client.clientPhone">Client Phone</span></dt>
+        <dd>
+          <span>{{ client.clientPhone }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopcycleApp.client.clientAddress">Client Address</span></dt>
+        <dd>
+          <span>{{ client.clientAddress }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Retour</span>
+      </button>
+
+      <button type="button" [routerLink]="['/client', client.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Editer</span>
+      </button>
+    </div>
+  </div>
+</div>

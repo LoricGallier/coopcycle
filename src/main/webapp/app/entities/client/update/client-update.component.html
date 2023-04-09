@@ -1,0 +1,154 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-client-heading" data-cy="ClientCreateUpdateHeading" jhiTranslate="coopcycleApp.client.home.createOrEditLabel">
+        Créer ou éditer un Client
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="coopcycleApp.client.clientName" for="field_clientName">Client Name</label>
+          <input
+            type="text"
+            class="form-control"
+            name="clientName"
+            id="field_clientName"
+            data-cy="clientName"
+            formControlName="clientName"
+          />
+          <div *ngIf="editForm.get('clientName')!.invalid && (editForm.get('clientName')!.dirty || editForm.get('clientName')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('clientName')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              Ce champ est obligatoire.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="coopcycleApp.client.clientEmail" for="field_clientEmail">Client Email</label>
+          <input
+            type="text"
+            class="form-control"
+            name="clientEmail"
+            id="field_clientEmail"
+            data-cy="clientEmail"
+            formControlName="clientEmail"
+          />
+          <div *ngIf="editForm.get('clientEmail')!.invalid && (editForm.get('clientEmail')!.dirty || editForm.get('clientEmail')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('clientEmail')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              Ce champ est obligatoire.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('clientEmail')?.errors?.pattern"
+              jhiTranslate="entity.validation.pattern"
+              [translateValues]="{ pattern: 'Client Email' }"
+            >
+              Ce champ doit suivre l'expression régulière Client Email.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="coopcycleApp.client.clientPhone" for="field_clientPhone">Client Phone</label>
+          <input
+            type="text"
+            class="form-control"
+            name="clientPhone"
+            id="field_clientPhone"
+            data-cy="clientPhone"
+            formControlName="clientPhone"
+          />
+          <div *ngIf="editForm.get('clientPhone')!.invalid && (editForm.get('clientPhone')!.dirty || editForm.get('clientPhone')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('clientPhone')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              Ce champ est obligatoire.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('clientPhone')?.errors?.pattern"
+              jhiTranslate="entity.validation.pattern"
+              [translateValues]="{ pattern: 'Client Phone' }"
+            >
+              Ce champ doit suivre l'expression régulière Client Phone.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="coopcycleApp.client.clientAddress" for="field_clientAddress">Client Address</label>
+          <input
+            type="text"
+            class="form-control"
+            name="clientAddress"
+            id="field_clientAddress"
+            data-cy="clientAddress"
+            formControlName="clientAddress"
+          />
+          <div
+            *ngIf="
+              editForm.get('clientAddress')!.invalid && (editForm.get('clientAddress')!.dirty || editForm.get('clientAddress')!.touched)
+            "
+          >
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('clientAddress')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              Ce champ est obligatoire.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('clientAddress')?.errors?.minlength"
+              jhiTranslate="entity.validation.minlength"
+              [translateValues]="{ min: 3 }"
+            >
+              Ce champ doit faire au minimum 3 caractères.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('clientAddress')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 100 }"
+            >
+              Ce champ doit faire moins de 100 caractères.
+            </small>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Annuler</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Sauvegarder</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

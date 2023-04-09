@@ -1,0 +1,28 @@
+{
+  "coopcycleApp": {
+    "plat": {
+      "home": {
+        "title": "Plats",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Създайте нов Plat",
+        "createOrEditLabel": "Създайте или редактирайте Plat",
+        "notFound": "Plats не са намерени"
+      },
+      "created": "Създаден е нов Plat с идентификатор {{ param }}",
+      "updated": "Plat с идентификатор {{ param }} e oбновен",
+      "deleted": "Plat с идентификатор {{ param }} е изтрит",
+      "delete": {
+        "question": "Наистина ли искате да изтриете Plat {{ id }}?"
+      },
+      "detail": {
+        "title": "Plat"
+      },
+      "id": "ID",
+      "name": "Name",
+      "price": "Price",
+      "quantity": "Quantity",
+      "restaurant": "Restaurant",
+      "order": "Order"
+    }
+  }
+}

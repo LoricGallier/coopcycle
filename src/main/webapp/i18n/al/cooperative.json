@@ -1,0 +1,27 @@
+{
+  "coopcycleApp": {
+    "cooperative": {
+      "home": {
+        "title": "Cooperatives",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Krijo një të ri Cooperative",
+        "createOrEditLabel": "Krijo ose përpuno një Cooperative",
+        "notFound": "No Cooperatives found"
+      },
+      "created": "Një Cooperative i ri u krijua me identifikues {{ param }}",
+      "updated": "Një Cooperative u përpunua me identifikues {{ param }}",
+      "deleted": "Një Cooperative u fshi me identifikues {{ param }}",
+      "delete": {
+        "question": "Jeni i sigurtë që doni të fshini Cooperative {{ id }}?"
+      },
+      "detail": {
+        "title": "Cooperative"
+      },
+      "id": "ID",
+      "name": "Name",
+      "restaurant": "Restaurant",
+      "livreur": "Livreur",
+      "client": "Client"
+    }
+  }
+}

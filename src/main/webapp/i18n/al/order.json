@@ -1,0 +1,30 @@
+{
+  "coopcycleApp": {
+    "order": {
+      "home": {
+        "title": "Orders",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Krijo një të ri Order",
+        "createOrEditLabel": "Krijo ose përpuno një Order",
+        "notFound": "No Orders found"
+      },
+      "created": "Një Order i ri u krijua me identifikues {{ param }}",
+      "updated": "Një Order u përpunua me identifikues {{ param }}",
+      "deleted": "Një Order u fshi me identifikues {{ param }}",
+      "delete": {
+        "question": "Jeni i sigurtë që doni të fshini Order {{ id }}?"
+      },
+      "detail": {
+        "title": "Order"
+      },
+      "id": "ID",
+      "orderDate": "Order Date",
+      "orderStatus": "Order Status",
+      "price": "Price",
+      "plat": "Plat",
+      "client": "Client",
+      "restaurant": "Restaurant",
+      "livreur": "Livreur"
+    }
+  }
+}

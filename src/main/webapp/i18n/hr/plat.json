@@ -1,0 +1,28 @@
+{
+  "coopcycleApp": {
+    "plat": {
+      "home": {
+        "title": "Plats",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Kreirati Plat",
+        "createOrEditLabel": "Kreirati ili urediti Plat",
+        "notFound": "Nije nađeno Plats"
+      },
+      "created": "Kreiran je Plat sa identifikatorom {{ param }}",
+      "updated": "Ažuriran je Plat sa identifikatorom {{ param }}",
+      "deleted": "Obrisan je Plat sa identifikatorom {{ param }}",
+      "delete": {
+        "question": "Da li ste sigurni da želite obrisati Plat {{ id }}?"
+      },
+      "detail": {
+        "title": "Plat"
+      },
+      "id": "ID",
+      "name": "Name",
+      "price": "Price",
+      "quantity": "Quantity",
+      "restaurant": "Restaurant",
+      "order": "Order"
+    }
+  }
+}

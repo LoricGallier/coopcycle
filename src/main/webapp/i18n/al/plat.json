@@ -1,0 +1,28 @@
+{
+  "coopcycleApp": {
+    "plat": {
+      "home": {
+        "title": "Plats",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Krijo një të ri Plat",
+        "createOrEditLabel": "Krijo ose përpuno një Plat",
+        "notFound": "No Plats found"
+      },
+      "created": "Një Plat i ri u krijua me identifikues {{ param }}",
+      "updated": "Një Plat u përpunua me identifikues {{ param }}",
+      "deleted": "Një Plat u fshi me identifikues {{ param }}",
+      "delete": {
+        "question": "Jeni i sigurtë që doni të fshini Plat {{ id }}?"
+      },
+      "detail": {
+        "title": "Plat"
+      },
+      "id": "ID",
+      "name": "Name",
+      "price": "Price",
+      "quantity": "Quantity",
+      "restaurant": "Restaurant",
+      "order": "Order"
+    }
+  }
+}

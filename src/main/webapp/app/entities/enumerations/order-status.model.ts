@@ -1,0 +1,9 @@
+export enum OrderStatus {
+  PREPARATION = 'PREPARATION',
+
+  PRETE = 'PRETE',
+
+  EN_LIVRAISON = 'EN_LIVRAISON',
+
+  LIVREE = 'LIVREE',
+}

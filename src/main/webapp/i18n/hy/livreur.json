@@ -1,0 +1,29 @@
+{
+  "coopcycleApp": {
+    "livreur": {
+      "home": {
+        "title": "Livreurs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Ստեղծել նոր Livreur",
+        "createOrEditLabel": "Ստեղծել կամ փոփոխել Livreur",
+        "notFound": "No Livreurs found"
+      },
+      "created": "Նոր Livreur ստեղծված է {{ param }} նունացուցիչով",
+      "updated": "Livreur թարմացվաց է {{ param }} նունացուցիչով",
+      "deleted": "Livreur հեռացված է {{ param }}  նունացուցիչով",
+      "delete": {
+        "question": "Դուք վստահ ե՞ք, որ ցանկանում եք հեռացնել Livreur {{ id }}?"
+      },
+      "detail": {
+        "title": "Livreur"
+      },
+      "id": "ID",
+      "livreurName": "Livreur Name",
+      "livreurEmail": "Livreur Email",
+      "livreurPhone": "Livreur Phone",
+      "livreurAddress": "Livreur Address",
+      "order": "Order",
+      "cooperative": "Cooperative"
+    }
+  }
+}

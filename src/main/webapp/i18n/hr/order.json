@@ -1,0 +1,30 @@
+{
+  "coopcycleApp": {
+    "order": {
+      "home": {
+        "title": "Orders",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Kreirati Order",
+        "createOrEditLabel": "Kreirati ili urediti Order",
+        "notFound": "Nije nađeno Orders"
+      },
+      "created": "Kreiran je Order sa identifikatorom {{ param }}",
+      "updated": "Ažuriran je Order sa identifikatorom {{ param }}",
+      "deleted": "Obrisan je Order sa identifikatorom {{ param }}",
+      "delete": {
+        "question": "Da li ste sigurni da želite obrisati Order {{ id }}?"
+      },
+      "detail": {
+        "title": "Order"
+      },
+      "id": "ID",
+      "orderDate": "Order Date",
+      "orderStatus": "Order Status",
+      "price": "Price",
+      "plat": "Plat",
+      "client": "Client",
+      "restaurant": "Restaurant",
+      "livreur": "Livreur"
+    }
+  }
+}

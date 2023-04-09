@@ -1,0 +1,175 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-livreur-heading" data-cy="LivreurCreateUpdateHeading" jhiTranslate="coopcycleApp.livreur.home.createOrEditLabel">
+        Créer ou éditer un Livreur
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="coopcycleApp.livreur.livreurName" for="field_livreurName">Livreur Name</label>
+          <input
+            type="text"
+            class="form-control"
+            name="livreurName"
+            id="field_livreurName"
+            data-cy="livreurName"
+            formControlName="livreurName"
+          />
+          <div *ngIf="editForm.get('livreurName')!.invalid && (editForm.get('livreurName')!.dirty || editForm.get('livreurName')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('livreurName')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              Ce champ est obligatoire.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="coopcycleApp.livreur.livreurEmail" for="field_livreurEmail">Livreur Email</label>
+          <input
+            type="text"
+            class="form-control"
+            name="livreurEmail"
+            id="field_livreurEmail"
+            data-cy="livreurEmail"
+            formControlName="livreurEmail"
+          />
+          <div
+            *ngIf="editForm.get('livreurEmail')!.invalid && (editForm.get('livreurEmail')!.dirty || editForm.get('livreurEmail')!.touched)"
+          >
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('livreurEmail')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              Ce champ est obligatoire.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('livreurEmail')?.errors?.pattern"
+              jhiTranslate="entity.validation.pattern"
+              [translateValues]="{ pattern: 'Livreur Email' }"
+            >
+              Ce champ doit suivre l'expression régulière Livreur Email.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="coopcycleApp.livreur.livreurPhone" for="field_livreurPhone">Livreur Phone</label>
+          <input
+            type="text"
+            class="form-control"
+            name="livreurPhone"
+            id="field_livreurPhone"
+            data-cy="livreurPhone"
+            formControlName="livreurPhone"
+          />
+          <div
+            *ngIf="editForm.get('livreurPhone')!.invalid && (editForm.get('livreurPhone')!.dirty || editForm.get('livreurPhone')!.touched)"
+          >
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('livreurPhone')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              Ce champ est obligatoire.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('livreurPhone')?.errors?.pattern"
+              jhiTranslate="entity.validation.pattern"
+              [translateValues]="{ pattern: 'Livreur Phone' }"
+            >
+              Ce champ doit suivre l'expression régulière Livreur Phone.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="coopcycleApp.livreur.livreurAddress" for="field_livreurAddress">Livreur Address</label>
+          <input
+            type="text"
+            class="form-control"
+            name="livreurAddress"
+            id="field_livreurAddress"
+            data-cy="livreurAddress"
+            formControlName="livreurAddress"
+          />
+          <div
+            *ngIf="
+              editForm.get('livreurAddress')!.invalid && (editForm.get('livreurAddress')!.dirty || editForm.get('livreurAddress')!.touched)
+            "
+          >
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('livreurAddress')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              Ce champ est obligatoire.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('livreurAddress')?.errors?.minlength"
+              jhiTranslate="entity.validation.minlength"
+              [translateValues]="{ min: 3 }"
+            >
+              Ce champ doit faire au minimum 3 caractères.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('livreurAddress')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 100 }"
+            >
+              Ce champ doit faire moins de 100 caractères.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="coopcycleApp.livreur.cooperative" for="field_cooperative">Cooperative</label>
+          <select
+            class="form-control"
+            id="field_cooperative"
+            data-cy="cooperative"
+            name="cooperative"
+            formControlName="cooperative"
+            [compareWith]="compareCooperative"
+          >
+            <option [ngValue]="null"></option>
+            <option [ngValue]="cooperativeOption" *ngFor="let cooperativeOption of cooperativesSharedCollection">
+              {{ cooperativeOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Annuler</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Sauvegarder</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
