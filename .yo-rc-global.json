@@ -1,0 +1,8 @@
+{
+  "generator-jhipster:7.9.3": {
+    "promptValues": {
+      "packageName": "info4.gl.coopcycle",
+      "nativeLanguage": "fr"
+    }
+  }
+}

@@ -1,0 +1,1 @@
+org.springframework.test.context.ContextCustomizerFactory = info4.gl.coopcycle.config.TestContainersSpringContextCustomizerFactory
